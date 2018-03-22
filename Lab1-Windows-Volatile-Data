@@ -1,1 +1,369 @@
+` 
+HARARE INSTITUTE OF TECHNOLOGY
+
+INFORMATION SECURITY AND ASSURANCE PART 4
+ISHEANESU MAGAYA H140170G
+
+COMPUTER FORENSICS LAB One – Windows Live Response
+
+TUTOR: MR MARENGEREKE
+
+
+
+
+Task 1 Creating a file volatile_1_03_2016.txt
+
+TOOLS REQUIRED TO PERFORM TASK: cmd.exe
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+NO ARGUMENTS FOUND	
+Filename	 Name of the file to be created
+Length	Size of the file to be created
+
+SCREENSHOTS
+ 
+
+COMMAND: fsutil file createnew volatile_26_02_2018.txt 0
+It will create an empty file named volatile_26_02_2018.txt 0
+	
+ 
+Task 2 Find the md5 of the text file volatile_1_03_2016.txt
+TOOLS REQUIRED TO PERFORM TASK: md5sum
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-b 	Read the file in binary mode
+-c	Check md5sums against a given list
+--status	Don’t output anything, status code shows success
+-w	Warn about improperly formatted md5sum checksum files
+--help	Displays help text
+--version	Output the version information and exit
+
+SCREENSHOTS
+ 
+COMMAND: md5sum volatile_26_02_2018.txt >>volatile_checksum.txt
+Creates an md5 of the file volatile_26_02_2018.txt and stores it in the file volatile_checksum.txt
+
+
+
+
+
+
+
+
+
+
+Task 3: Find the system date 
+TOOLS REQUIRED TO PERFORM TASK : date.exe
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+/t	switch which tells the command to just output the current date, without prompting for a new date.
+
+SCREENSHOTS
+ 
+
+COMMAND: date /t >> volatile_26_02_2018.txt
+Gets the system date and stores it in the text file volatile_26_02_2018.txt
+
+Task 4: Find the system time
+TOOLS REQUIRED TO PERFORM TASK : date.exe
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+/t	Switch which tells the command to just output the current date, without prompting for a new time.
+
+SCREENSHOT
+ 
+
+COMMAND: time /t >> volatile_26_02_2018.txt
+Gets the system time and stores it in the text file volatile_26_02_2018.txt
+
+Task 5: Find current network connections
+TOOLS REQUIRED TO PERFORM TASK : netstat 
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-a	Displays all connections and listening ports
+-b	Displays the executable involved in creating each connection or listening port
+-e	Displays Ethernet statistics
+-f	Displays the Fully Qualified Domain Name for foreign addresses
+-n	Displays addresses and port numbers in numerical form
+-o	Displays the owning process ID that is associated with each connection
+-p proto	Shows the connections for the protocols specified by proto
+-q	Displays all connections listening ports and bound all non-listening ports.
+-r	Displays the non-listening ports
+-s	Displays per protocol statistics
+-t	Displays current connection offload state
+-x	Displays network direct connections, listeners and shared endpoints
+-y	Displays the TCP connection template for all the connections. 
+-interval	Displays selected statistics, pausing interval seconds between each display.
+
+SCREENSHOTS
+
+COMMAND: netstat –an Displays all the connections and listening ports
+
+
+
+
+
+
+
+
+Task 6:  Determining which executable are opening TCP or UDP Ports
+
+TOOLS REQUIRED TO PERFORM TASK: netstat 
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-a	Displays all connections and listening ports
+-b	Displays the executable involved in creating each connection or listening port
+-e	Displays Ethernet statistics
+-f	Displays the Fully Qualified Domain Name for foreign addresses
+-n	Displays addresses and port numbers in numerical form
+-o	Displays the owning process ID that is associated with each connection
+-p proto	Shows the connections for the protocols specified by proto. 
+-q	Displays all connections listening ports and bound all non-listening ports.
+-r	Displays the non-listening ports
+-s	Displays per protocol statistics
+-t	Displays current connection offload state
+-x	Displays network direct connections, listeners and shared endpoints
+-y	Displays the TCP connection template for all the connections. 
+-interval	Displays selected statistics, pausing interval seconds between each display.
+Screen Shot
+ 
+Command: netstat –anp udp>>filename
+
+
+
+
+
+Task 7: Find the Internal Routing Table
+TOOLS USED TO PERFORM TASK: netstat -rn
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-a	Displays all connections and listening ports
+-b	Displays the executable involved in creating each connection or listening port
+-e	Displays Ethernet statistics
+-f	Displays the Fully Qualified Domain Name for foreign addresses
+-n	Displays addresses and port numbers in numerical form
+-o	Displays the owning process ID that is associated with each connection
+-p proto	Shows the connections for the protocols specified by proto. 
+-q	Displays all connections listening ports and bound all non-listening ports.
+-r	Displays the non-listening ports
+-s	Displays per protocol statistics
+-t	Displays current connection offload state
+-x	Displays network direct connections, listeners and shared endpoints
+-y	Displays the TCP connection template for all the connections. 
+-interval	Displays selected statistics, pausing interval seconds between each display.
+SCREENSHOTS
+ 
+
+ 
+Command used: netstat –rn. Displays the internal routing table
+
+
+
+
+Task 8: Determining open TCP connections
+TOOLS USED TO PERFORM TASK: netstat –anp tcp
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-a	Displays all connections and listening ports
+-b	Displays the executable involved in creating each connection or listening port
+-e	Displays Ethernet statistics
+-f	Displays the Fully Qualified Domain Name for foreign addresses
+-n	Displays addresses and port numbers in numerical form
+-o	Displays the owning process ID that is associated with each connection
+-p proto	Shows the connections for the protocols specified by proto. 
+-q	Displays all connections listening ports and bound all non-listening ports.
+-r	Displays the non-listening ports
+-s	Displays per protocol statistics
+-t	Displays current connection offload state
+-x	Displays network direct connections, listeners and shared endpoints
+-y	Displays the TCP connection template for all the connections
+-interval	Displays selected statistics, pausing interval seconds between each display.
+Screenshot 
+
+Command: netstat –anp TCP
+
+
+
+
+Task 9: Determining which services are opening UDP connections
+TOOLS USED TO PERFORM TASK: netstat –anp udp
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-a	Displays all connections and listening ports
+-b	Displays the executable involved in creating each connection or listening port
+-e	Displays Ethernet statistics
+-f	Displays the Fully Qualified Domain Name for foreign addresses
+-n	Displays addresses and port numbers in numerical form
+-o	Displays the owning process ID that is associated with each connection
+-p proto	Shows the connections for the protocols specified by protocol. 
+-q	Displays all connections listening ports and bound all non-listening ports.
+-r	Displays the non-listening ports
+-s	Displays per protocol statistics
+-t	Displays current connection offload state
+-x	Displays network direct connections, listeners and shared endpoints
+-y	Displays the UDP connection template for all the connections
+-interval	Displays selected statistics, pausing interval seconds between each display.
+Screen Shot
+
+ 
+Command: netstat –anp UDP
+
+
+
+
+
+
+
+
+
+
+
+
+
+Task 10: Running Processes
+TOOLS USED TO PERFORM TASK: pslist
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-d	Show thread detail
+-m	Show memory detail
+-x	Show process, memory information and threads
+-t	Show process tree
+-s [n]	Run in task manager for the optional seconds specified
+-r n	Task Manager refresh rate in seconds
+\\computer	Specifies remote computer
+-u 	Optional username for remote login
+-p	Optional password for remote login. if you don’t request for it on the command line pslist may request one if necessary
+-name	Show information about the process that begin with the name specified
+-e	Exact name process zone
+pid	Show information about the specified system
+
+SCREENSHOTS
+ 
+Command used: pslist. It lists the current processes running.
+
+
+Task 11: Running Services
+TOOLS TO PERFORM TASK: psservice
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+Query	Queries the status of a service
+Config 	Queries the configuration
+Setconfig	Sets a configuration
+Start 	Starts a service
+Stop	Stops a service
+Restart	Stops and restarts a service
+Pause 	Pause a service
+Continue	Continue a service
+Depend	Enumerates the services that depend on the one specified
+find	Searches for an instance of a service on the network
+security	Reports the security permissions assigned to a service
+
+SCREENSHOTS
+ 
+Command Used: psservice. It gives the list of services that are currently running
+
+Task 12: Find Scheduled Jobs
+TOOLS USED TO PERFOM TASK: schtasks.exe
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+NO OPTIOAL ARGUMENTS FOUND
+/Create         	Creates a new scheduled task.
+/Delete	Deletes the scheduled task(s).
+/ShowSid        	 Shows the security identifier corresponding to a scheduled task name.
+ /End           	Stops the currently running scheduled task.
+
+/Run           	Runs the scheduled task on demand.
+
+/Change         	Changes the properties of scheduled task
+ /Query          	Displays all scheduled tasks.
+
+SCREENSHOTS
+ 
+
+Command used: schtasks. 
+It gives the list of tasks that are scheduled to run
+ 
+Task 13: Process Image Dumps
+TOOLS TO BE USED: userdump
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-p	Displays a list of running process and process Id’s
+-k	Optionally causes a process to be killed after being dumped
+-m	Same as above, except that it dumps multiple files
+-d	Specifies the directory to dump the files
+-g	Same as above, except that it dumps win32 gui apps that appear to hang
+SCREENSHOTS
+ 
+Command Used: userdump /p. displays a list of running processes and process ID’s
+ 
+Task14:  Find the History of all commands Executed
+TOOLS TO BE USED: cmd.exe
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+NO OPTIONAL ARGUMENTS FOUND
+
+SCREENSHOTS
+ 
+Command Used: DOSKEY /history. Lists the history of all the commands performed
+ 
+
+Task 15: OPEN FILES
+TOOLS TO PERFORM TASK: psfile
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-u        	Specifies optional user name for login to
+ remote computer
+-p        	Specifies password for user name.
+Id  	Id of file to print information for or close
+Path 	Full or partial path of files to match.
+
+ -c        	Closes file identified by file Id.
+Screen Shot
+ 
+ 
+
+Command : psfile.exe
+
+Task 16:  Users currently logged on
+TOOLS TO PERFORM TASK: psloggedon
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-l     
+	Show only local logons
+-x     
+	Don't show logon times
+ 
+Screen Shot 
+Command : PSloggedon.exe
+
+
+
+
+
+
+
+
+
+
+
+Task17:  Cached NetBIOS Name Table
+TOOLS REQUIRED TO PERFORM TASK: nbtstat
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-a	Lists the remote machine's name table given its name
+-c	Lists NBT's cache of remote [machine] names and their IP addresses
+  -n   	Lists local NetBIOS names
+  -r   	Lists names resolved by broadcast and via WINS
+
+  -R   	Purges and reloads the remote cache name table
+  -S   	Lists sessions table with the destination IP addresses
+  -s   	Lists sessions table converting destination IP
+-A   	Lists the remote machine's name table given its IP address.
+-RR  	Sends Name Release packets to WINS and then, starts Refresh
+
+Screen shot
+ 
+
+COMMAND: nbtstat -c>> volatile_26_02_2018.txt
+
+Task17:  Calculate the second md5 of volatile_1_03_2016.txt
+TOOLS REQUIRED TO PERFORM TASK: md5sum
+LIST ALL FILTERS/ ARGUMENTS THAT CAN BE PASSED FOR THE TOOL/ COMMAND
+-b 	Read the file in binary mode
+-c	Check md5sums against a given list
+--status	Don’t output anything, status code shows success
+-w	Warn about improperly formatted md5sum checksum files
+--help	Displays help text
+--version	Output the version information and exit
+SCREENSHOTS
+
+ 
+
+COMMAND: md5sum volatile_26_02_2018.txt >> volatile_26_02_2018.txt
+Creates an md5 of the file volatile_26_02_2018.txt and stores it in the file in the file volatile_26_02_2018.txt
+
+
 
