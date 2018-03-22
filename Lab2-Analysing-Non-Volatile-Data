@@ -1,1 +1,163 @@
+ 
+
+INFORMATION SECURITY AND ASSURANCE
+
+ISHEANESU T MAGAYA
+
+ISS 421: COMPUTER FORENSICS
+
+LAB 2: NON-VOLATILE DATA
+
+MR T. MARENGEREKE
+
+
+
+
+
+Task	Description	TOOLS
+1	Starting NetCat Server
+Send victim machine date
+	NetCat 1.11
+a)	Starting NetCat Server
+	Command : Ipconfig get the host machine i.e. on windows
+ 
+	Command: “nc 192.168.137.1 –v –l –p 12345 > magz_27_02_2018.txt”
+ 
+ 
+Requires access and permissions 
+ 
+b)	Send victim machine date
+	Command: “date | nc 192.168.137.1 12345”
+ 
+Result  
+Task	Description	TOOLS
+2	Check System Version and Patch Level	PsTools, cmd.exe
+
+	Command: “psinfo -h -s -d”
+ 
+ 
+ 
+Task	Description	TOOLS
+3	The Auditing Policy
+	AUDITPOL
+
+	COMMAND: “auditpol /get /category:*”
+ 
+
+
+
+
+
+
+
+Task	Description	TOOLS
+4	A History of Logins 	McAfee NTLast Tools
+
+	COMMAND: “ntlast.exe”
+ 
+Task	Description	TOOLS
+5	System Event Logs
+	PsLoglist 
+	COMMAND: “psloglist –s –x security”
+OUTPUT:
+ 
+
+
+
+
+
+Task	Description	TOOLS
+6	User Accounts 	pwdump6.exe
+	COMMAND: “pwdump localhost>>C:\log.txt”
+ 
+ 
+  
+
+
+
+
+
+
+Task	Description	TOOLS
+7	UnxUtils	Find, UnxUtils
+	COMMAND:  find c:\ -print “%m;%Ax;%AT;%Tx;%TT;%Cx;%CT;%U;%G;%s;%p\n”
+
+ 
+
+
+
+
+
+
+
+
+
+Task	Description	TOOLS
+8	User Accounts
+	pwdump -x localhost
+	Command: pwdump -x localhost
+ 
+ 
+
+
+
+
+
+
+Task	Description	TOOLS
+9	Registry Data
+	regdmp
+	COMMAND:  regdmp.exe
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+Task	Description	TOOLS
+10	IIS
+	IIS, PowerShell
+	COMMAND:  Get_ChildItem -path IIS: \
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Task	Description	TOOLS
+11	SUSPICIOUS FILES
+	procexp.exe
+	Command: procexp.exe 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
